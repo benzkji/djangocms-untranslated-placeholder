@@ -1,0 +1,10 @@
+include LICENSE
+include README.md
+include PYPI.md
+global-exclude *.orig *.pyc *.log *.swp
+
+recursive-include djangocms_untranslated_placeholder/basic *
+recursive-include djangocms_untranslated_placeholder/autopublisher *
+recursive-include djangocms_untranslated_placeholder/global_untranslated_placeholder *
+recursive-include djangocms_untranslated_placeholder/admin_style *
+recursive-include djangocms_untranslated_placeholder/apphook_templates *

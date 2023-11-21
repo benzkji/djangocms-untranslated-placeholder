@@ -1,0 +1,12 @@
+pre-commit
+tox
+coverage
+django-coverage
+
+# development with more or less latest versions of these
+django<5
+django-cms==4.1.0rc4
+djangocms-link
+djangocms-text-ckeditor
+django-filer
+django-modeltranslation
