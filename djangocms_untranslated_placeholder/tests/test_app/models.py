@@ -1,4 +1,4 @@
-from cms.models import CMSPlugin
+from cms.models import CMSPlugin, PlaceholderField
 from django.db import models
 
 
@@ -28,3 +28,12 @@ class TestInlineModel(models.Model):
 
     def __str__(self):
         return self.field1
+
+
+class ModelWithPlaceholderField(models.Model):
+    text = models.CharField(max_length=64, default='', blank=True)
+    content1 = PlaceholderField(slotname="content1")
+
+    def __str__(self):
+        return self.text
+

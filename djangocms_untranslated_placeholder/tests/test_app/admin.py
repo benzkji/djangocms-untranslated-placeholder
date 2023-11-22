@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationTabularInline, TranslationStackedInline, TranslationAdmin
 
-from .models import TestModel, TestInlineModel
+from .models import TestModel, TestInlineModel, ModelWithPlaceholderField
 
 
 class TestInlineModelInline(TranslationStackedInline, admin.StackedInline):
@@ -23,3 +23,13 @@ class TestModelAdmin(TranslationAdmin, admin.ModelAdmin):
 
 
 admin.site.register(TestModel, TestModelAdmin)
+
+
+
+class ModelWithPlaceholderFieldAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(ModelWithPlaceholderField, ModelWithPlaceholderFieldAdmin)
+
+

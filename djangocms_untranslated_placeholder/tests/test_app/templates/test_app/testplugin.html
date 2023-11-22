@@ -1,3 +1,8 @@
 <div>
     testplugin content: {{ instance.field1}}
+xd
+    {% for obj in object_list %}
+        <a href="/detail/{{ obj.id }}">{{ obj.text }}</a>
+    {% endfor %}
+
 </div>

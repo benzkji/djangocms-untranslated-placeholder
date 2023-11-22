@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+
+{% block content %}
+    <h2>{{ object.text }}</h2>
+    {% render_placeholder object.content1 %}
+{% endblock %}

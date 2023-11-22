@@ -20,11 +20,13 @@
 </div>
 
 <div>
-    <h2>Placeholders</h2>
-    <h3>Translated (normal mode, not yet possible, is untranslated as well)</h3>
-    {% placeholder 'translated_placeholder' %}
-    <h3>Untranslated</h3>
-    {% placeholder 'untranslated_placeholder' %}
+    {% block content %}
+        <h2>Placeholders</h2>
+        <h3>Translated (normal mode, not yet possible, is untranslated as well)</h3>
+        {% placeholder 'translated_placeholder' %}
+        <h3>Untranslated</h3>
+        {% placeholder 'untranslated_placeholder' %}
+    {% endblock %}
 </div>
 
 {% render_block 'js' %}
