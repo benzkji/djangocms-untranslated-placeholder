@@ -1,5 +1,7 @@
-from cms.models import CMSPlugin, PlaceholderField
+from cms.models import CMSPlugin, PlaceholderField, PlaceholderRelationField
+from cms.utils.placeholder import get_placeholder_from_slot
 from django.db import models
+from django.utils.functional import cached_property
 
 
 class TestPluginModel(CMSPlugin):
@@ -32,8 +34,11 @@ class TestInlineModel(models.Model):
 
 class ModelWithPlaceholderField(models.Model):
     text = models.CharField(max_length=64, default='', blank=True)
-    content1 = PlaceholderField(slotname="content1")
+    placeholders = PlaceholderRelationField()
 
     def __str__(self):
         return self.text
 
+    @cached_property
+    def my_placeholder(self):
+        return get_placeholder_from_slot(self.placeholders, "content1")
